@@ -10,7 +10,47 @@ const en = {
     line: "An open-source civic project by Nshipyard. Not affiliated with the Government of Canada or the City of Toronto.",
     badge: "Open source",
   },
-  nav: { explorer: "Storms", chart: "Chart", developers: "Developers", data: "Data", back: "All projects" },
+  nav: { explorer: "Storms", chart: "Chart", charts: "Charts", developers: "Developers", data: "Data", back: "All projects" },
+  chartsPage: {
+    kicker: "Charts",
+    title: "Four charts of the storm losses",
+    lead: "Every chart on this page is drawn from this project's own storm dataset: 13 storms in data/storms.json, with snowfall from Open-Meteo ERA5 and revenue estimates calibrated on the February 2025 disclosure by the Toronto Parking Authority.",
+    items: [
+      {
+        title: "Revenue lost in each storm",
+        takeaway:
+          "The 12 to 18 February 2025 storm is the largest at $1,579,600. Even its low estimate of $995,100 is higher than the main estimate for every other storm.",
+        source:
+          "Source: data/storms.json. Revenue is the main estimate; the band runs from est_revenue_lost_cad_low to est_revenue_lost_cad_high (rate plus or minus 30 percent, price per transaction plus or minus 10 percent). Anchor: Toronto Parking Authority 2026 Operating Budget report.",
+      },
+      {
+        title: "More snow, more revenue lost",
+        takeaway:
+          "The points sit on a near straight line because the estimate charges each centimetre of snow the same amount: about $48,500 in revenue lost per centimetre.",
+        source:
+          "Source: data/storms.json, snowfall_cm against est_revenue_lost_cad for all 13 storms. Snowfall: Open-Meteo ERA5. The straight line comes from the model (one rate per centimetre), not from a separate measurement for each storm.",
+      },
+      {
+        title: "Revenue lost by winter",
+        takeaway:
+          "Winter 2022-23 has the highest total at $3,207,700 across five storms, ahead of winter 2024-25 at $2,572,900 across four storms.",
+        source:
+          "Source: data/storms.json, est_revenue_lost_cad summed by winter. A winter runs July to June and is named for the year it starts, so December 2024 counts in winter 2024-25. The November and December 2025 storms open winter 2025-26, so this chart has four winters and the bars add to the full $7,883,500 total.",
+      },
+      {
+        title: "Transactions lost in each storm",
+        takeaway:
+          "The 12 to 18 February 2025 storm accounts for 288,700 of the 1,440,500 transactions lost across all 13 storms, about one in five.",
+        source:
+          "Source: data/storms.json, est_transactions_lost. Rate: 8,854 transactions lost per centimetre, calibrated on the 371,000 transactions the Toronto Parking Authority disclosed for the February 2025 episode.",
+      },
+    ],
+    snowfallAxis: "Snowfall (cm)",
+    revenueAxis: "Revenue lost (Canadian dollars)",
+    transactionsAxis: "Transactions lost",
+    febLabel: "12 to 18 February 2025 storm",
+    bandLegend: "The pale bar runs from the low estimate to the high estimate. The dark bar is the main estimate.",
+  },
   hero: {
     title: "Toronto parking revenue lost to snowstorms, 2023-2025",
     lead: "13 snowstorms cost an estimated $7.9M over three winters. The largest, in February 2025, cost about $1.6M.",
@@ -109,7 +149,47 @@ const fr: Dict = {
     line: "Un projet civique à code source ouvert par Nshipyard. Sans affiliation avec le gouvernement du Canada ni la Ville de Toronto.",
     badge: "Code source ouvert",
   },
-  nav: { explorer: "Tempêtes", chart: "Graphique", developers: "Développeurs", data: "Données", back: "Tous les projets" },
+  nav: { explorer: "Tempêtes", chart: "Graphique", charts: "Graphiques", developers: "Développeurs", data: "Données", back: "Tous les projets" },
+  chartsPage: {
+    kicker: "Graphiques",
+    title: "Quatre graphiques des pertes liées aux tempêtes",
+    lead: "Chaque graphique de cette page est tiré du jeu de données de ce projet : 13 tempêtes dans data/storms.json, avec les chutes de neige d'Open-Meteo ERA5 et des estimations de revenus calibrées sur les chiffres publiés par la Toronto Parking Authority pour février 2025.",
+    items: [
+      {
+        title: "Revenus perdus lors de chaque tempête",
+        takeaway:
+          "La tempête du 12 au 18 février 2025 est la plus importante avec 1 579 600 $. Même son estimation basse de 995 100 $ dépasse l'estimation principale de chaque autre tempête.",
+        source:
+          "Source : data/storms.json. Les revenus sont l'estimation principale; la bande va de est_revenue_lost_cad_low à est_revenue_lost_cad_high (taux plus ou moins 30 %, prix par transaction plus ou moins 10 %). Ancrage : rapport sur le budget de fonctionnement 2026 de la Toronto Parking Authority.",
+      },
+      {
+        title: "Plus de neige, plus de revenus perdus",
+        takeaway:
+          "Les points suivent une ligne presque droite parce que l'estimation attribue le même coût à chaque centimètre de neige : environ 48 500 $ de revenus perdus par centimètre.",
+        source:
+          "Source : data/storms.json, snowfall_cm comparé à est_revenue_lost_cad pour les 13 tempêtes. Neige : Open-Meteo ERA5. La ligne droite vient du modèle (un seul taux par centimètre), pas d'une mesure distincte pour chaque tempête.",
+      },
+      {
+        title: "Revenus perdus par hiver",
+        takeaway:
+          "L'hiver 2022-2023 arrive en tête avec 3 207 700 $ pour cinq tempêtes, devant l'hiver 2024-2025 avec 2 572 900 $ pour quatre tempêtes.",
+        source:
+          "Source : data/storms.json, somme de est_revenue_lost_cad par hiver. Un hiver va de juillet à juin et prend l'année de son début : décembre 2024 compte donc dans l'hiver 2024-2025. Les tempêtes de novembre et décembre 2025 ouvrent l'hiver 2025-2026, donc ce graphique compte quatre hivers et les barres totalisent les 7 883 500 $ complets.",
+      },
+      {
+        title: "Transactions perdues lors de chaque tempête",
+        takeaway:
+          "La tempête du 12 au 18 février 2025 compte 288 700 des 1 440 500 transactions perdues sur les 13 tempêtes, soit environ une sur cinq.",
+        source:
+          "Source : data/storms.json, est_transactions_lost. Taux : 8 854 transactions perdues par centimètre, calibré sur les 371 000 transactions publiées par la Toronto Parking Authority pour l'épisode de février 2025.",
+      },
+    ],
+    snowfallAxis: "Chute de neige (cm)",
+    revenueAxis: "Revenus perdus (dollars canadiens)",
+    transactionsAxis: "Transactions perdues",
+    febLabel: "Tempête du 12 au 18 février 2025",
+    bandLegend: "La barre pâle va de l'estimation basse à l'estimation haute. La barre foncée est l'estimation principale.",
+  },
   hero: {
     title: "Revenus de stationnement perdus à Toronto à cause des tempêtes de neige, 2023-2025",
     lead: "13 tempêtes de neige ont coûté environ 7,9 M$ sur trois hivers. La plus importante, en février 2025, a coûté environ 1,6 M$.",

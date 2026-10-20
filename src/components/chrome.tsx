@@ -22,10 +22,11 @@ export function Nav() {
   const { t, lang, setLang } = useLang();
   const [open, setOpen] = useState(false);
   const links = [
-    { href: "#storms", label: t.nav.explorer },
-    { href: "#chart", label: t.nav.chart },
-    { href: "#developers", label: t.nav.developers },
-    { href: "#data", label: t.nav.data },
+    { href: "/#storms", label: t.nav.explorer },
+    { href: "/#chart", label: t.nav.chart },
+    { href: "/charts", label: t.nav.charts },
+    { href: "/#developers", label: t.nav.developers },
+    { href: "/#data", label: t.nav.data },
   ];
   return (
     <header className="border-b border-line bg-paper/90 backdrop-blur">
