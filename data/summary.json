@@ -1,0 +1,32 @@
+{
+  "project": "toronto-storm-parking-loss",
+  "tagline": "Toronto parking revenue lost to snowstorms, 2023-2025",
+  "anchor": {
+    "event": "February 2025 (Feb 6-9 and Feb 12-18 waves)",
+    "transactions_lost_disclosed": 371000,
+    "on_street_inventory_closed_pct": 47,
+    "episode_snowfall_cm": 41.9,
+    "source": "Toronto Parking Authority 2026 Operating Budget report, Nov 25 2025, p.1"
+  },
+  "calibration": {
+    "rate_transactions_per_cm": 8854.0,
+    "math": "371,000 disclosed transactions / 41.9 cm episode snowfall = 8,854 transactions per cm",
+    "transactions_band_pct": 30.0,
+    "dollars_per_transaction": 5.47,
+    "dollars_per_transaction_source": "TPA 2025 forecast: $177.3M revenue on 32.4M transactions, blended rate 5.47 per transaction",
+    "dollars_per_transaction_range": [
+      4.92,
+      6.02
+    ],
+    "note": "The +-30% band on the rate contains the alternative reading where the 371,000 covers only the larger Feb 12-18 wave (rate would be 11,380 per cm)."
+  },
+  "event_definition": "A snow day is >= 1.0 cm. An event is a maximal run of snow days allowing one gap day below 1.0 cm. A major storm qualifies at >= 5.0 cm total.",
+  "snowfall_source": "Open-Meteo archive (ERA5 reanalysis), Toronto 43.65N 79.38W, daily snowfall_sum. Environment Canada bulk downloads were unreachable from the build network; Open-Meteo is the documented fallback.",
+  "ticket_cross_check": "Daily City of Toronto parking ticket counts, 2023-2025, are used as a street parking activity proxy only, never as a revenue input.",
+  "storm_count": 13,
+  "total_transactions_lost": 1440500,
+  "total_revenue_lost_cad": 7883500,
+  "total_revenue_lost_cad_low": 4966600,
+  "total_revenue_lost_cad_high": 11273200,
+  "biggest_storm_id": "S10"
+}
